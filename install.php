@@ -257,12 +257,14 @@ $systemChecks = [
 
                                 <div class="mb-3">
                                     <label for="db_user" class="form-label">Database Username</label>
-                                    <input type="text" class="form-control" id="db_user" name="db_user" required>
+                                    <input type="text" class="form-control" id="db_user" name="db_user" value="root" required>
+                                    <small class="text-muted">Default: root</small>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="db_pass" class="form-label">Database Password</label>
-                                    <input type="password" class="form-control" id="db_pass" name="db_pass">
+                                    <input type="password" class="form-control" id="db_pass" name="db_pass" value="">
+                                    <small class="text-muted">Default: empty password</small>
                                 </div>
 
                                 <div class="d-grid">

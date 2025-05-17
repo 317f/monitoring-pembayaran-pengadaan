@@ -1,0 +1,27 @@
+# Monitoring Pembayaran Pengadaan
+# Prevent access to sensitive directories
+
+User-agent: *
+Disallow: /config/
+Disallow: /controllers/
+Disallow: /models/
+Disallow: /views/
+Disallow: /public/uploads/
+Allow: /public/assets/
+Allow: /
+
+# Prevent indexing of sensitive files
+Disallow: /*.php$
+Disallow: /*.sql$
+Disallow: /*.config$
+Disallow: /*.json$
+Disallow: /*.lock$
+Disallow: /.htaccess
+Disallow: /install.php
+
+# Allow indexing of main pages
+Allow: /index.php
+Allow: /README.md
+
+# Crawl-delay to prevent server overload
+Crawl-delay: 10

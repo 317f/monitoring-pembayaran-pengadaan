@@ -9,8 +9,8 @@ try {
 
     // Check if users table exists
     echo "Checking users table...\n";
-    $stmt = $pdo->query("SHOW TABLES LIKE 'users'");
-    if ($stmt->rowCount() == 0) {
+    $stmt = $pdo->query("SELECT name FROM sqlite_master WHERE type='table' AND name='users'");
+    if ($stmt->fetch() === false) {
         echo "Error: Users table does not exist!\n";
         exit(1);
     }
@@ -26,7 +26,7 @@ try {
         echo "Importing default users...\n";
         
         // Import default users
-        $schema = file_get_contents('database/schema.sql');
+        $schema = file_get_contents('database/schema.sqlite.sql');
         $pdo->exec($schema);
         
         echo "Default users imported.\n";
